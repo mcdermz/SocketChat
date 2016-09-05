@@ -8,7 +8,7 @@
   socket.$inject = ['$rootScope'];
 
   function socket($rootScope) {
-      var socker = io.connect();
+      var socket = io.connect();
 
     return {
         on: on,
@@ -34,6 +34,6 @@
         });
       });
     }
-    
+
   }
 })();

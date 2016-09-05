@@ -17,13 +17,13 @@ io.on('connection', function(socket){
       console.log(users);
       //User name
       socket.nickname = data.nickname;
-      users[socket.nickname] = socket;
+      users[socket.nickname] = socket; 
       var userObj = {
-          nickname: data.nickname,
-          socketID: socket.id
-      };
-      users.push(userObj);
-      io.emit('all-users', users);
+        nickname: data.nickname,
+        socketid: socket.id
+    };
+    users.push(userObj);
+    io.emit('all-users', users);
   });
 
  socket.on('disconnect', function(){
