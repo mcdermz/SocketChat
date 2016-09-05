@@ -11,6 +11,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 io.on('connection', function(socket){
   console.log('a user connected');
 
+    socket.on('get-users', function() {
+        socket.emit('all-users', users);
+    });
+
   //new user
   socket.on('join', function(data){
       console.log(data);
@@ -22,6 +26,7 @@ io.on('connection', function(socket){
         nickname: data.nickname,
         socketid: socket.id
     };
+
     users.push(userObj);
     io.emit('all-users', users);
   });
@@ -29,6 +34,10 @@ io.on('connection', function(socket){
  socket.on('disconnect', function(){
     console.log('user disconnected');
   });
+});
+
+socket.on('send-message', function(data) {
+    socket.broadcast.emit('message-received', data);
 });
 
 server.listen(3000, function() {
