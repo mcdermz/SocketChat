@@ -31,13 +31,20 @@ io.on('connection', function(socket){
     io.emit('all-users', users);
   });
 
+  socket.on('send-message', function(data) {
+      //socket.broadcast.emit('message-received', data);
+      io.emit('message-received', data);
+  });
+
+  socket.on('send-like', function(data){
+      console.log(data);
+      socket.broadcast.to(data.like).emit('user-liked',data);
+  });
+
  socket.on('disconnect', function(){
     console.log('user disconnected');
   });
-});
 
-socket.on('send-message', function(data) {
-    socket.broadcast.emit('message-received', data);
 });
 
 server.listen(3000, function() {
