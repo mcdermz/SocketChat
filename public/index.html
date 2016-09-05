@@ -2,11 +2,11 @@
 <html>
   <head>
     <base href="/">
-    <meta charset="utf-8">
-    <title>Socket.io Chat</title>
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <!-- <meta charset="utf-8"> -->
+    <title>SocketChat</title>
+    <!-- <meta name="viewport" content="width=device-width"> -->
+    <link rel="stylesheet" href="included/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="included/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body ng-app="app">
@@ -20,7 +20,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Socket.io Chat</a>
+            <a class="navbar-brand" href="/">SocketChat</a>
           </div>
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
           </div>
@@ -31,20 +31,15 @@
       <div ng-view></div>
     </div>
 
-    <!-- Socket.io JS file -->
     <script src="/socket.io/socket.io.js"></script>
-
-    <!-- Bower Components -->
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="../node_modules/ng-lodash/build/ng-lodash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-cookie/4.1.0/angular-cookie.min.js"></script>
-    <script src="https//ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
-
-    <!-- JavaScripts -->
+    <script src="included/jquery/dist/jquery.js"></script>
+    <script src="included/angular/angular.js"></script>
+    <script src="included/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="included/ng-lodash/build/ng-lodash.min.js"></script>
+    <script src="included/angular-cookies/angular-cookies.js"></script>
+    <script src="included/angular-route/angular-route.js"></script>
+    <script src="included/angular-sanitize/angular-sanitize.js"></script>
+    <script src="included/ngstorage/ngStorage.min.js"></script>
     <script src="app.js"></script>
     <script src="join/join.Ctrl.js"></script>
     <script src="main/main.Ctrl.js"></script>

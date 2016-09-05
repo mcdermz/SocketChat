@@ -6,8 +6,12 @@ var io = require('socket.io')(server);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-io.on('connection', function(socket) {
-    console.log('new connection has been made');
+io.on('connection', function(socket){
+  console.log('a user connected');
+
+ socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
 });
 
 server.listen(3000, function() {
