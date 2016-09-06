@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 io.on('connection', function(socket){
   console.log('a user connected');
-
+//Connections
     socket.on('get-users', function() {
         socket.emit('all-users', users);
     });
