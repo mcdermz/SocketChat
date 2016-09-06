@@ -15,7 +15,7 @@
       $scope.mynickname = $localStorage.nickname;
       var nickname = $scope.mynickname;
 
-      socket.emit('get-users');
+      socket.emit('get-users'); 
 
       socket.on('all-users', function(data) {
           console.log(data);
