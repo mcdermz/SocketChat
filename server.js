@@ -42,7 +42,11 @@ io.on('connection', function(socket){
   });
 
  socket.on('disconnect', function(){
-    console.log('user disconnected');
+    // console.log('user disconnected', function() {
+        users = users.filter(function(item) {
+            return item.nickname !== socket.nickname;
+        });
+        io.emit('all-users', users);
   });
 
 });
